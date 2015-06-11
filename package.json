@@ -1,0 +1,18 @@
+{
+  "name": "Sprout-NG",
+  "version": "1.0.0",
+  "description": "Seeder to kick-off with an AngularJS + Node Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Sneh Raj Lakhotia, Dinesh Swami",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
