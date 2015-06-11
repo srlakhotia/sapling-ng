@@ -13,6 +13,7 @@
   "author": "Sneh Raj Lakhotia, Dinesh Swami",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.4"
+    "express": "^4.12.4",
+    "less": "^2.5.1"
   }
 }
