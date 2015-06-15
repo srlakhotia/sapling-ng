@@ -1,5 +1,5 @@
 {
-  "name": "Sprout-NG",
+  "name": "Sapling-NG",
   "version": "1.0.0",
   "description": "Seeder to kick-off with an AngularJS + Node Project",
   "main": "index.js",
@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.12.4",
-    "less": "^2.5.1"
+    "less": "^2.5.1",
+    "optimist": "^0.6.1"
   }
 }
