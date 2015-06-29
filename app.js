@@ -55,7 +55,14 @@ app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
-app.get('/api/name', api.name);
+app.get('/api/pageTitle', api.pageTitle);
+
+
+// JSON DATA
+// TODO: just for an example, so to be removed later
+app.get('/data/contactList', api.contactList);
+app.post('/data/contactList/add', api.contactList.add);
+app.put('/data/contactList/remove', api.contactList.remove);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);

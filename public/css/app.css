@@ -1,30 +1,48 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
+html, body, h1, h2, h3, h4, h5, h6, hr, p, ul, li {
+  margin: 0;
   padding: 0;
+}
+
+header {
+  border-bottom: 1px solid #999;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h1#appTitle {
+  text-align: center;
+}
+
+nav ul {
+  text-align: center;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  padding: 5px 10px;
+}
+
+#viewContainer {
+  width: 600px;
+  margin: 30px auto;
+  border: 1px solid #999;
+  padding: 20px;
+}
+
+#pageTitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+footer {
+  padding-top: 10px;
+  border-top: 1px solid #999;
+  text-align: center;
 }

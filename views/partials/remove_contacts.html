@@ -1,0 +1,15 @@
+<div id="viewContainer">
+    <h3 id="pageTitle" page-title></h3>
+
+    <form ng-submit="removeContacts()">
+        <ul>
+            <li ng-repeat="contact in contactArray">
+                <input name="{{contact.id}}" type="checkbox" value="{{contact.id}}" ng-click="toggleSelection(contact.id)" />
+                <label for="{{contact.id}}">{{contact.name}}</label>
+            </li>
+        </ul>
+        <br />
+        <br />
+        <input type="submit" id="submit" name="submit" value="Remove Contact(s)" ng-disabled="selectedArray.length < 1" />
+    </form>
+</div>

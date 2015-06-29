@@ -10,16 +10,23 @@ angular.module('myApp', [
 ])
 .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/view1', {
-            templateUrl: 'partials/partial1',
-            controller: 'MyCtrl1'
+        .when('/', {
+            controller: 'MainCtrl'
         })
-        .when('/view2', {
-            templateUrl: 'partials/partial2',
-            controller: 'MyCtrl2'
+        .when('/add_contacts', {
+            templateUrl: 'partials/add_contacts',
+            controller: 'AddContactCtrl'
+        })
+        .when('/view_contacts', {
+            templateUrl: 'partials/view_contacts',
+            controller: 'ViewContactCtrl'
+        })
+        .when('/remove_contacts', {
+            templateUrl: 'partials/remove_contacts',
+            controller: 'RemoveContactCtrl'
         })
         .otherwise({
-            redirectTo: '/view1'
+            redirectTo: '/view_contacts'
         });
     $locationProvider.html5Mode(true);
 });

@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-	<head>
-		<meta charset="utf-8" />
-		<title>Sapling NG App</title>
-		<link rel="stylesheet" href="/css/app.css" />
-		<base href="/" />
-	</head>
-	<body>
-		<div ng-controller="AppCtrl">
-			<h2>Hello, now you can {{myName}}</h2>
+    <head>
+        <meta charset="utf-8" />
+        <title>Sapling NG App</title>
+        <link rel="stylesheet" href="/css/app.css" />
+        <base href="/" />
+    </head>
+    <body>
+        <div ng-controller="MainCtrl">
+            <header>
+                <h1 id="appTitle">Sapling-ng</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="add_contacts">Add Contacts</a>
+                    </li>
+                    <li>
+                        <a href="view_contacts">View Contacts</a>
+                    </li>
+                    <li>
+                        <a href="remove_contacts">Remove Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+            <div ng-view></div>
 
-			<ul>
-				<li>
-					<a href="view1">View 1</a>
-				</li>
-				<li>
-					<a href="view2">View 2</a>
-				</li>
-			</ul>
-			<div ng-view></div>
+            <footer>
+                Sapling NG: v<span app-version></span>
+            </footer>
+        </div>
 
-			<div>
-				Sapling NG: v<span app-version></span>
-			</div>
-		</div>
+        <!-- Script injections -->
+        <!-- Libraries -->
+        <script src="js/lib/angular/angular.js" type="text/javascript"></script>
 
-		<!-- Script injections -->
-		<script src="js/lib/angular/angular.js" type="text/javascript"></script>
-		<script src="js/app.js" type="text/javascript"></script>
-		<script src="js/controllers/controllers.js" type="text/javascript"></script>
-		<script src="js/directives/directives.js" type="text/javascript"></script>
-		<script src="js/services/services.js" type="text/javascript"></script>
-		<script src="js/filters/filters.js" type="text/javascript"></script>
-	</body>
+        <!-- AngularJS app files -->
+        <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/controllers/controllers.js" type="text/javascript"></script>
+        <script src="js/directives/directives.js" type="text/javascript"></script>
+        <script src="js/services/services.js" type="text/javascript"></script>
+        <script src="js/filters/filters.js" type="text/javascript"></script>
+    </body>
 </html>

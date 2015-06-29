@@ -1,0 +1,14 @@
+<div id="viewContainer">
+    <h3 id="pageTitle" page-title></h3>
+    <div>
+        <form ng-submit="addContact()">
+            <label for="name">Name: </label>
+            <input type="text" name="name" required ng-model="name"/>
+            <br /><br />
+            <label for="des">Designation: </label>
+            <input type="text" name="des" ng-model="designation" />
+            <br /><br />
+            <input type="submit" id="submit" value="Submit Form" />
+        </form>
+    </div>
+</div>
