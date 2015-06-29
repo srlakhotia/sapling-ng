@@ -1,46 +1,67 @@
-// #!/usr/bin/env node
 
-if(process.env.NODE_ENV === undefined) {
-    process.env.NODE_ENV = 'local';
-}
+/**
+ * Module dependencies
+ */
 
 var express = require('express'),
-    server = express(),
-    fs = require('fs'),
-    path = require('path'),
-    currentDirName = __dirname.split(path.sep),
-    argv = require('optimist').argv,
-    settings = {
-        opts: { //configurable
-            db: 'mongo',
-            port: 80
-        }
-    },
-    mainApp = {};
+  routes = require('./routes'),
+  api = require('./routes/api'),
+  http = require('http'),
+  path = require('path'),
+  fs = require('fs');
 
-currentDirName = currentDirName[(currentDirName.length-1)];
+var app = module.exports = express();
 
-if(isNaN(currentDirName)) {
-    mainApp['stable'] = express();
-    mainApp['stable'].jsDependencies = JSON.parse(fs.readFileSync('./js_dependencies.json', 'utf-8'));
-    mainApp['stable'].frameworkDirName = __dirname;
+
+/**
+ * Configuration
+ */
+
+// all environments
+app.set('port', process.env.PORT || 3000);
+
+/****** FOR HTML ******/
+app.set('views', path.join(__dirname, '/views'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+
+/**** FOR JADE *******/
+// app.set('view engine', 'jade');
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+var env = process.env.NODE_ENV || 'development';
+
+// development only
+if (env === 'development') {
+  // TODO
 }
 
-if (typeof argv.port != 'undefined' || typeof argv.p != 'undefined') {
-    settings.opts['port'] = argv.port || argv.p;
+// production only
+if (env === 'production') {
+  // TODO
 }
 
-server.get('/', function(req, res) {
-    res.sendFile(__dirname + '/views/index.html');
-})
 
-// server.get(/^(.+)$/, function(req, res) {
-//     console.log('dirname::: ', __dirname);
-//     console.log('req.params:::: ', req.params)
-//     res.json({asd:'asd', statusCode: 200})
-// });
+/**
+ * Routes
+ */
 
+// serve index and view partials
+app.get('/', routes.index);
+app.get('/partials/:name', routes.partials);
 
-server.listen(settings.opts.port, function() {
-    console.log("Express server listening on port %d in %s mode", this.address().port, server.settings.env);
+// JSON API
+app.get('/api/name', api.name);
+
+// redirect all others to the index (HTML5 history)
+app.get('*', routes.index);
+
+/**
+ * Start Server
+ */
+
+http.createServer(app).listen(app.get('port'), function () {
+  console.log('Express server listening on port ' + app.get('port'));
 });
