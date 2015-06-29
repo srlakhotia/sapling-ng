@@ -8,7 +8,8 @@ var express = require('express'),
   api = require('./routes/api'),
   http = require('http'),
   path = require('path'),
-  fs = require('fs');
+  fs = require('fs'),
+  bodyParser = require('body-parser');
 
 var app = module.exports = express();
 
@@ -30,6 +31,7 @@ app.set('view engine', 'ejs');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 var env = process.env.NODE_ENV || 'development';
 
