@@ -55,6 +55,3 @@ Just fetch the changes and merge them into your project with git.
       partials/         --> angular view partials (partial jade/html templates)
         partial1.jade(html)
         partial2.jade(html)
-
-## License
-MIT
