@@ -55,3 +55,9 @@ Just fetch the changes and merge them into your project with git.
       partials/         --> angular view partials (partial jade/html templates)
         partial1.jade(html)
         partial2.jade(html)
+
+### Sample Application (contact app)
+
+To clone a sample contact app and see a small app there working, the following command is to be run from your git bash (SSH):
+
+    git clone -b contact_app git@github.com:srlakhotia/sapling-ng.git
