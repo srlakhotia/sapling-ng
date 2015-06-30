@@ -22,7 +22,7 @@ Runs like a typical express app:
 
 Just fetch the changes and merge them into your project with git.
 
-## Directory Layout
+## Directory Layout (develop branch)
     
     app.js                --> app config
     package.json          --> for npm
