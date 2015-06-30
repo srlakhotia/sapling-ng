@@ -1,1 +1,13 @@
-p This is the partial for view 1.
+div#viewContainer
+    h3#pageTitle(page-title)
+    div
+        form(ng-submit="addContact()")
+            label(for="name") Name:&nbsp;
+            input(type="text", name="name", required, ng-model="name")
+            br
+            br
+            label(for="des") Designation:&nbsp;
+            input(type="text", name="des", ng-model="designation")
+            br
+            br
+            input(type="submit", id="submit", value="Submit Form")

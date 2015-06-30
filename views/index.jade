@@ -1,21 +1,28 @@
 extends layout
 
 block body
-    div(ng-controller='AppCtrl')
-        h2 Hello {{name}}
-        ul.menu
-            li
-                a(href='view1') view1
-            li
-                a(href='view2') view2
-
+    div(ng-controller='MainCtrl')
+        header
+            h1#appTitle Sapling-ng
+        nav
+            ul
+                li
+                    a(href="add_contacts") Add Contacts
+                li
+                    a(href="view_contacts") View Contacts
+                li
+                    a(href="remove_contacts") Remove Contacts
         div(ng-view)
 
-        div
-            | Sapling NG: v
+        footer Sapling NG V:
             span(app-version)
 
+
+    //Script injections
+    //Libraries
     script(src='js/lib/angular/angular.js')
+
+    //AngularJS app files
     script(src='js/app.js')
     script(src='js/services/services.js')
     script(src='js/controllers/controllers.js')

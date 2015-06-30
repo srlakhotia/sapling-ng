@@ -1,5 +1,10 @@
-
-p This is the partial for view 2.
-p
-  | Showing of 'interpolate' filter:
-  | {{ 'Current version is v%VERSION%.' | interpolate }}
+div#viewContainer
+    h3#pageTitle(page-title)
+    form(ng-submit="removeContacts()")
+        ul
+            li(ng-repeat="contact in contactArray")
+                input(name="{{contact.id}}", type="checkbox", value="{{contact.id}}", ng-click="toggleSelection(contact.id)")
+                label(for="{{contact.id}}") {{contact.name}}
+        br
+        br
+        input(type="submit", id="submit", name="submit", value="Remove Contact(s)", ng-disabled="selectedArray.length < 1")

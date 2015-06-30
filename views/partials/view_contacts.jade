@@ -1,5 +1,5 @@
-
-p This is the partial for view 2.
-p
-  | Showing of 'interpolate' filter:
-  | {{ 'Current version is v%VERSION%.' | interpolate }}
+div#viewContainer
+    h3#pageTitle(page-title)
+    div
+        ul
+            li(ng-repeat="contact in contactArray") {{contact.name}} - {{contact.des}}
