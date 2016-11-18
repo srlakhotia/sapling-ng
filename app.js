@@ -27,7 +27,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 /**** FOR JADE *******/
-// app.set('view engine', 'jade');
+app.set('view engine', 'jade');
 
 
 app.use(express.static(path.join(__dirname, 'public')));

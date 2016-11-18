@@ -16,6 +16,16 @@ angular.module('myApp.controllers', ['myApp.services'])
     error(function (data, status, headers, config) {
         $scope.name = 'Error!';
     });
+
+    $scope.layoverVisible = false;
+
+    $scope.addContact = function addContact() {
+        $scope.layoverVisible = true;
+    };
+
+    $scope.closeLayover = function closeLayover() {
+        $scope.layoverVisible = false;
+    };
 }])
 
 .controller('AddContactCtrl', ['$scope', 'ContentService', function($scope, ContentService) {

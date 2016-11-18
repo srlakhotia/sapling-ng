@@ -3,8 +3,8 @@ extends layout
 block body
     div(ng-controller='MainCtrl')
         header
-            h1#appTitle Sapling-ng
-        nav
+            h1#appTitle Contact Manager
+        //-nav
             ul
                 li
                     a(href="add_contacts") Add Contacts
@@ -13,7 +13,11 @@ block body
                 li
                     a(href="remove_contacts") Remove Contacts
         div(ng-view)
+        #fab-icon.add(ng-click="addContact()")
 
+        page-layover#layoverContainer(ng-if="layoverVisible")
+            #ddd
+                p this is content
         footer Sapling NG V:
             span(app-version)
 
